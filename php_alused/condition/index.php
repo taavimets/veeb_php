@@ -1,3 +1,19 @@
+<style>
+    div {
+        margin: auto;
+        width: 100px;
+        height: 100px;
+        font-size: 80px;
+        vertical-align: middle;
+        text-align: center;
+    }
+    .paaris{
+        background: red;
+    }
+    .paaritu{
+        background: green;
+    }
+</style>
 <?php
 /**
  * Created by PhpStorm.
@@ -6,11 +22,9 @@
  * Time: 14:14
  */
 $arv = rand(0, 100);
-
 $jaak = $arv % 2;
-echo $arv.' - ';
 if($jaak == 0) {
-    echo 'paaris';
+    echo '<div class="paaris">'.$arv.'</div>';
 } else {
-    echo 'paaritu';
+    echo '<div class="paaritu">'.$arv.'</div>';
 }
