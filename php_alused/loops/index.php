@@ -1,3 +1,9 @@
+<?php
+for ($kord = 1; $kord <= 10; $kord++){
+    header('Refresh: 2');
+
+}
+?>
 <style>
     div {
         margin: auto;
