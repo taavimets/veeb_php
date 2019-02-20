@@ -14,10 +14,6 @@ function paarsuseKontroll($arv){
     }
 }
 
-paarsuseKontroll(7);
-paarsuseKontroll(15);
-paarsuseKontroll(68);
-paarsuseKontroll(9);
-paarsuseKontroll(24);
-paarsuseKontroll(35);
-paarsuseKontroll(1);
+for($arv = 0; $arv <= 10; $arv++){
+    paarsuseKontroll($arv);
+}
