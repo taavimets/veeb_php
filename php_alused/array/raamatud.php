@@ -37,6 +37,18 @@ echo '<pre>';
 print_r($raamat3);
 echo '</pre>';
 
+function vordleHinda($raamat1, $raamat2){
+    if($raamat1['hind'] == $raamat2['hind']){
+        return 0;
+    } else if($raamat1['hind'] < $raamat2['hind']){
+        return -1;
+    } else {
+        return 1;
+    }
+}
+
+usort($raamatud, 'vordleHinda');
+
 function tabeliPais($andmed){
     echo '<thead>';
         echo '<tr>';
