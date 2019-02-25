@@ -24,6 +24,10 @@ echo $peppa['nimi'].' on '.$peppa['vanus'].' aastat vana<br>';
 $porsad = array();
 $porsad['peppa'] = $peppa;
 $porsad['george'] = $george;
+
+$porsad['peppa']['lemmik varv'] = 'punane';
+$porsad['george']['lemmik varv'] = 'sinine';
+
 echo '<pre>';
 print_r($porsad);
 echo'</pre>';
