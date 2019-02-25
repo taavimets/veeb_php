@@ -47,17 +47,23 @@ function tabeliPais($andmed){
     echo '</thead>';
 }
 
-function tabeliRida($raamat){
+function tabeliRida($andmed){
     echo '<tr>';
-    foreach ($raamat as $elementdiNimetus => $elemendiVaartus){
+    foreach ($andmed as $elementdiNimetus => $elemendiVaartus){
         echo '<td>'. $elemendiVaartus.'</td>';
     }
     echo '</tr>';
 }
 
-$tabeli_pealkiri = array_keys($raamatud[0]);
-echo '<table border="1">';
-tabeliRida($raamatud[0]);
-tabeliRida($raamatud[1]);
-tabeliRida($raamatud[2]);
-echo '</table>';
+function tabel($andmed){
+    echo '<table>';
+        tabeliPais(array_keys($andmed[0]));
+        echo '<tbody>';
+        foreach ($andmed as $element){
+            tabeliRida($element);
+        }
+        echo '</tbody>';
+    echo '</table>';
+}
+
+tabel($raamatud);
