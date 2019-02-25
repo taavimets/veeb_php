@@ -47,8 +47,6 @@ function vordleHinda($raamat1, $raamat2){
     }
 }
 
-usort($raamatud, 'vordleHinda');
-
 function tabeliPais($andmed){
     echo '<thead>';
         echo '<tr>';
@@ -78,4 +76,16 @@ function tabel($andmed){
     echo '</table>';
 }
 
-tabel($raamatud);
+function filtreeriHinnaJargi($andmed, $algHind, $loppHind){
+    $filtreerimiseTulemus = array();
+    foreach($andmed as $element){
+        if($element['hind'] >= $algHind and $element['hind'] <= $loppHind){
+            $filtreerimiseTulemus[] = $element;
+        }
+    }
+    return $filtreerimiseTulemus;
+}
+
+usort($raamatud, 'vordleHinda');
+
+tabel(filtreeriHinnaJargi($raamatud, 0, 100));
