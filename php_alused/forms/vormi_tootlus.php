@@ -5,17 +5,9 @@
  * Date: 25.02.2019
  * Time: 11:59
  */
-echo '<pre>';
-print_r($_GET);
-echo '</pre>';
-echo '<hr>';
+extract($_GET);
+$nimi = $_GET['nimi'];
+$parool = $_GET['parool'];
 
-echo '<pre>';
-print_r($_POST);
-echo '</pre>';
-echo '<hr>';
-
-echo '<pre>';
-print_r($_REQUEST);
-echo '</pre>';
-echo '<hr>';
+echo 'Tere'.$nimi.'!<br>';
+echo 'sinu parool on '.$parool;
