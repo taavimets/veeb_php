@@ -9,5 +9,10 @@ extract($_GET);
 $nimi = $_GET['nimi'];
 $parool = $_GET['parool'];
 
-echo 'Tere'.$nimi.'!<br>';
-echo 'sinu parool on '.$parool;
+if(strlen($nimi) == 0 or strlen($parool) == 0){
+    header('Location: index.html');
+} else {
+
+    echo 'Tere'.$nimi.'!<br>';
+    echo 'sinu parool on '.$parool;
+}
