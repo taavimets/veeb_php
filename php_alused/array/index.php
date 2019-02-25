@@ -34,6 +34,7 @@ $porsad['george'] = $george;
 
 echo $george['nimi'].' on '.$george['vanus'].' aastat vana<br>';
 echo $peppa['nimi'].' on '.$peppa['vanus'].' aastat vana<br>';
+echo '<hr>';
 
 foreach ($porsad as $porsaseNimi=>$porsaseAndmed){
     if($porsaseAndmed['sugu'] == 'naine'){
