@@ -36,6 +36,11 @@ echo $george['nimi'].' on '.$george['vanus'].' aastat vana<br>';
 echo $peppa['nimi'].' on '.$peppa['vanus'].' aastat vana<br>';
 
 foreach ($porsad as $porsaseNimi=>$porsaseAndmed){
+    if($porsaseAndmed['sugu'] == 'naine'){
+        echo '<p style="color: red">';
+    } else {
+        echo '<p style="color: blue">';
+    }
     echo '<b>'.$porsaseNimi.'</b><br>';
     foreach ($porsaseAndmed as $nimetus=>$vaartus){
         echo '<li>'.$nimetus.' - '.$vaartus.'</li>';
