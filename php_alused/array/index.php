@@ -20,10 +20,13 @@ $porsad = array(
     )
 );
 
-echo $porsad[0].'<br>';
-echo $porsad[1].'<br>';
-echo $porsad[2].'<br>';
-echo $porsad[3].'<br>';
+$porsad[0][] = 'sinine';
+$porsad[1][] = 'punane';
+
+echo $porsad[0][0].'<br>';
+echo $porsad[0][1].'<br>';
+echo $porsad[0][2].'<br>';
+echo $porsad[0][3].'<br>';
 
 echo '<hr>';
 
