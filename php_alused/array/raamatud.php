@@ -40,7 +40,7 @@ echo '</pre>';
 function vordleHinda($raamat1, $raamat2){
     if($raamat1['hind'] == $raamat2['hind']){
         return 0;
-    } else if($raamat1['hind'] < $raamat2['hind']){
+    } else if($raamat1['hind'] > $raamat2['hind']){
         return -1;
     } else {
         return 1;
