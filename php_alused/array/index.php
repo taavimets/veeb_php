@@ -20,3 +20,10 @@ $peppa = array(
 
 echo $george['nimi'].' on '.$george['vanus'].' aastat vana<br>';
 echo $peppa['nimi'].' on '.$peppa['vanus'].' aastat vana<br>';
+
+$porsad = array();
+$porsad['peppa'] = $peppa;
+$porsad['george'] = $george;
+echo '<pre>';
+print_r($porsad);
+echo'</pre>';
