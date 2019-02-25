@@ -18,16 +18,9 @@ $peppa = array(
     'pikkus' => 1.04
 );
 
+foreach ($peppa as $nimi=>$vaartus) {
+    echo $nimi.' - '.$vaartus.'<br>';
+}
+
 echo $george['nimi'].' on '.$george['vanus'].' aastat vana<br>';
 echo $peppa['nimi'].' on '.$peppa['vanus'].' aastat vana<br>';
-
-$porsad = array();
-$porsad['peppa'] = $peppa;
-$porsad['george'] = $george;
-
-$porsad['peppa']['lemmik varv'] = 'punane';
-$porsad['george']['lemmik varv'] = 'sinine';
-
-echo '<pre>';
-print_r($porsad);
-echo'</pre>';
