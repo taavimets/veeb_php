@@ -22,5 +22,23 @@ foreach ($peppa as $nimi=>$vaartus) {
     echo $nimi.' - '.$vaartus.'<br>';
 }
 
+echo '<hr>';
+
+foreach ($george as $nimi=>$vaartus) {
+    echo $nimi.' - '.$vaartus.'<br>';
+}
+
+$porsad = array();
+$porsad['peppa'] = $peppa;
+$porsad['george'] = $george;
+
 echo $george['nimi'].' on '.$george['vanus'].' aastat vana<br>';
 echo $peppa['nimi'].' on '.$peppa['vanus'].' aastat vana<br>';
+
+foreach ($porsad as $porsaseNimi=>$porsaseAndmed){
+    echo '<b>'.$porsaseNimi.'</b><br>';
+    foreach ($porsaseAndmed as $nimetus=>$vaartus){
+        echo '<li>'.$nimetus.' - '.$vaartus.'</li>';
+    }
+    echo '</ul>';
+}
