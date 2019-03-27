@@ -14,12 +14,12 @@ $main->set('lang', $http->get('lang_id'));
 $main->set('title', 'App Example Title');
 $mainContent = new Template('menu.main_content');
 $nav = new Template('nav.nav');
-$sql = 'SELECT * FROM dish_availability';
+$sql = 'SELECT DISTINCT * FROM dish_availability GROUP BY dish_date';
 $dates = $db->getData($sql);
 foreach ($dates as $date){
     $navItem = new Template('nav.item');
     $link = $http->getLink(array('date' => $date['dish_date']));
-    $navItem->set('date', $link);
+    $navItem->set('link', $link);
     $navItem->set('date', $date['dish_date']);
     $nav->add('nav_items', $navItem->parse());
 }
