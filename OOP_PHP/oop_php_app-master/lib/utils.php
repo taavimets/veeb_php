@@ -26,4 +26,9 @@ function fixDb($val)
     */
     return '"'.addSlashes($val).'"';
 }
+
+// discounti arvutamine
+function discount ($price, $procent) {
+    return round($price - ($price * $procent) / 100.0, 2);
+}
 ?>
