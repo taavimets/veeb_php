@@ -1,10 +1,10 @@
 <?php
 require_once 'conf.php';
 // main page by html templates
-$main = new Template('main');
-$meta = new Template('meta');
-$style = new Template('style');
-$js = new Template('js');
+$main = new Template('app.main');
+$meta = new Template('app.meta');
+$style = new Template('app.style');
+$js = new Template('app.js');
 // add meta, style and js templates content to main template
 $main->set('meta', $meta->parse());
 $main->set('style', $style->parse());
@@ -12,11 +12,22 @@ $main->set('js', $js->parse());
 // set up main page real values
 $main->set('lang', $http->get('lang_id'));
 $main->set('title', 'App Example Title');
-$mainContent = new Template('main_content');
+$mainContent = new Template('menu.main_content');
+$nav = new Template('nav.nav');
+$sql = 'SELECT * FROM dish_availability';
+$dates = $db->getData($sql);
+foreach ($dates as $date){
+    $navItem = new Template('nav.item');
+    $link = $http->getLink(array('date' => $date['dish_date']));
+    $navItem->set('date', $link);
+    $navItem->set('date', $date['dish_date']);
+    $nav->add('nav_items', $navItem->parse());
+}
+$mainContent->set('nav', $nav->parse());
 
 
 
-require_once 'nav.php'; // nav element
+// require_once 'nav.php'; // nav element
 // page content from controller
 // add action control
 require_once 'controller.php';
